@@ -4,12 +4,14 @@ import { IoIosArrowUp } from "react-icons/io";
 import { useState } from "react";
 import Menu from "./Menu";
 import CompanyMenu from "./CompanyMenu";
+import MobileMenu from "./MobileMenu";
 
 // i must use mx-auto with container to prevent the scroll effect
 
 const NavBar = () => {
   const [menu, setMenu] = useState(false);
   const [company, setCompany] = useState(false);
+  const [mobileMenu, setMobileMenu] = useState(false);
 
   const handleMenu = () => {
     setMenu(!menu);
@@ -17,6 +19,10 @@ const NavBar = () => {
 
   const handleCompany = () => {
     setCompany(!company);
+  };
+
+  const handleMobileMenu = () => {
+    setMobileMenu(!mobileMenu);
   };
 
   return (
@@ -52,7 +58,7 @@ const NavBar = () => {
                 <p>Company</p>
                 {company ? <IoIosArrowUp /> : <IoIosArrowDown />}
                 {company && (
-                  <div className="absolute left-[300px] top-[60px] bg-white">
+                  <div className="absolute left-[350px] top-[60px] bg-white">
                     <CompanyMenu />
                   </div>
                 )}
@@ -68,9 +74,17 @@ const NavBar = () => {
             Resgister
           </button>
         </div>
-        <div className="text-3xl lg:hidden">
+        <div
+          onClick={handleMobileMenu}
+          className="text-3xl lg:hidden hover:cursor-pointer"
+        >
           <HiOutlineMenu />
         </div>
+        {mobileMenu && (
+          <div className="absolute  right-[0px] bg-white rounded-lg p-4">
+            <MobileMenu />
+          </div>
+        )}
       </div>
     </section>
   );
