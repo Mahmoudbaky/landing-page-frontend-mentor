@@ -1,6 +1,6 @@
 const Hero = () => {
   return (
-    <section className="pt-9">
+    <section className=" pt-9">
       <div className="container px-[0px] flex flex-col items-center lg:flex-row lg:justify-around   min-h-[500px] lg:min-h-[600px]">
         <div className="lg:hidden">
           <img src="src/assets/images/image-hero-mobile.png" alt="hero" />

@@ -81,7 +81,7 @@ const NavBar = () => {
           <HiOutlineMenu />
         </div>
         {mobileMenu && (
-          <div className="absolute  right-[0px] bg-white rounded-lg p-4">
+          <div className="absolute top-[0px] right-[150px] bg-white rounded-lg p-4">
             <MobileMenu />
           </div>
         )}
